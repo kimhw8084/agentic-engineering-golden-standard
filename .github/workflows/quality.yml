@@ -1,0 +1,26 @@
+name: Golden Quality Gate
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify template and OpenCode skill conventions
+        run: python scripts/verify_standard.py
+      - name: Run synthetic no-network unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Evaluate access-filtered synthetic retrieval
+        run: python -m scripts.evaluate_fixture --min-hit 0.85
+      - name: Execute synthetic draft safety demo
+        run: python -m scripts.change_demo

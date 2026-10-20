@@ -1,0 +1,66 @@
+[
+  {
+    "id": "job",
+    "question": "Why did JOB-1042 fail?",
+    "roles": [
+      "engineer"
+    ],
+    "expected": [
+      "JOB-1042"
+    ]
+  },
+  {
+    "id": "validator",
+    "question": "What does VAL-02 validate?",
+    "roles": [
+      "engineer"
+    ],
+    "expected": [
+      "VAL-02"
+    ]
+  },
+  {
+    "id": "recipe",
+    "question": "RECIPE-A7 sample_count handling",
+    "roles": [
+      "engineer"
+    ],
+    "expected": [
+      "RECIPE-A7"
+    ]
+  },
+  {
+    "id": "review",
+    "question": "SOP-3 file review workflow",
+    "roles": [
+      "analyst"
+    ],
+    "expected": [
+      "SOP-3"
+    ]
+  },
+  {
+    "id": "message",
+    "question": "What did MSG-202 promise?",
+    "roles": [
+      "analyst"
+    ],
+    "expected": [
+      "MSG-202"
+    ]
+  },
+  {
+    "id": "privacy",
+    "question": "EMAIL-SECRET confidential budget",
+    "roles": [
+      "engineer"
+    ],
+    "expected": []
+  },
+  {
+    "id": "unauth",
+    "question": "SOP-3",
+    "roles": [],
+    "expected": []
+  }
+]

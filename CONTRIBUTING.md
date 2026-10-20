@@ -1,0 +1,3 @@
+# Contribution protocol
+
+Use a short issue with baseline, scope, design, test cases and mastery objective. For architectural changes, add an ADR. For behavior changes, add failing tests first where possible and run the full quality gate. Never commit proprietary manufacturing artifacts, logs or employee communications. All examples added here must be synthetic and reviewed for accidental identifiers. Include real executed command output in PR description and at least one failure-case test. Prefer focused changes over broad rewrites. Owners may require security or operations approval before publishing a new integration.
