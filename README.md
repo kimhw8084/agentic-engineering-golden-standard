@@ -15,6 +15,10 @@ IT/support capacity, and maintain [current interview evidence](academy/README.md
 
 ## In 10 minutes
 
+For a one-way transfer to a Windows work PC, start with [OFFLINE_START.md](OFFLINE_START.md)
+and the [visual field guide](docs/field-guide/field-guide.pdf). The guide is a generated
+explanation of canonical rules; preflight is offline and needs approved Python 3.11+.
+
 Requirements: **Python 3.11+**, Git. No external Python dependencies for the reference tests. OpenCode is optional for local exercises, required only for AI-assisted command/skill workflows.
 
 ```bash
@@ -24,6 +28,7 @@ python -m scripts.evaluate_fixture
 python -m scripts.change_demo
 python -m scripts.trace_demo
 python -m scripts.skill_manifest
+python scripts/offline_preflight.py
 ```
 
 Then open this repository in OpenCode and use `/golden-audit`. No model or provider is configured by the template; your approved internal settings are preserved.

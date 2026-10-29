@@ -19,7 +19,10 @@ REQUIRED = ('AGENTS.md', 'README.md', 'docs/ARCHITECTURE.md',
             '.github/CODEOWNERS', 'CHANGELOG.md', 'docs/GOVERNANCE.md', 'docs/GLOSSARY.md',
             'docs/V1_GAP_MATRIX.md', 'docs/MIGRATION_V2.md', 'docs/RUNTIME_CONTRACTS.md',
             'docs/AGENT_PATTERNS.md', 'docs/CONTEXT_ENGINEERING.md', 'docs/TOOL_TRUST.md',
-            'docs/PRODUCT_DELIVERY.md', 'docs/SKILL_PUBLICATION.md', 'docs/V2_VERIFICATION.md')
+            'docs/PRODUCT_DELIVERY.md', 'docs/SKILL_PUBLICATION.md', 'docs/V2_VERIFICATION.md',
+            'OFFLINE_START.md', 'scripts/offline_preflight.py', 'scripts/verify_transfer.py',
+            'docs/field-guide/content.json', 'docs/field-guide/field-guide.pdf',
+            'academy/assessment/README.md', 'academy/assessment/check_submission.py')
 NAME_RE = re.compile(r'^[a-z0-9]+(?:-[a-z0-9]+)*$')
 
 

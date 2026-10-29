@@ -7,7 +7,10 @@ permissions:
   contents: read
 jobs:
   test:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
@@ -28,3 +31,5 @@ jobs:
         run: python -m scripts.evaluate_fixture --cases examples/fixtures/domain_cases.json --repeats 20 --min-hit 1.0
       - name: Execute offline tool-policy trace examples
         run: python -m scripts.trace_demo
+      - name: Verify offline preflight
+        run: python scripts/offline_preflight.py

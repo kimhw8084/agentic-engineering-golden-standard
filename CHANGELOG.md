@@ -4,6 +4,11 @@ Versions describe the standard, not production maturity. No tag is implied.
 
 ## Unreleased
 
+- Add a monochrome visual field guide, Windows offline first-use instructions, committed
+  snapshot ZIP/checksum tooling, and a single offline preflight command. Python/model
+  provisioning and Windows execution remain explicit target prerequisites.
+- Add visible synthetic readiness checks without a solution or claimed human assessment.
+
 - Clarify the standard's own mission/backlog versus separately authorized application examples.
 - Extend canonical impact guidance with opportunity selection, full-cost/uncertainty treatment
   and adoption under limited IT capacity; compare deterministic/no-model alternatives.

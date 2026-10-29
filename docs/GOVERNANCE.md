@@ -24,6 +24,11 @@ Examples, labs and templates are explanatory, not additional normative sources.
 | `docs/GLOSSARY.md` | Shared terminology | Standard maintainer |
 | `docs/adr/` | Numbered architectural decisions | Decision author + independent reviewer |
 | `CHANGELOG.md`, `docs/MIGRATION_V2.md` | Release history and migration | Release owner |
+| `OFFLINE_START.md` | One-way Windows transfer, prerequisites and snapshot verification | Standard maintainer |
+| `academy/assessment/README.md` | First synthetic assessment contract; canonical mastery rubric remains in academy README | Human learning owner |
+
+The visual field guide in `docs/field-guide/` is explanatory and generated from `content.json`.
+Its page-level sources point to canonical rules. It grants no permissions or new maturity.
 
 This is the documentation ownership map. Remaining `docs/` playbooks, blueprint, roadmap,
 performance, brownfield and references pages are navigation/application guidance; their

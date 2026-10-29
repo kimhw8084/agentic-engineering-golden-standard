@@ -77,7 +77,10 @@ class IntegrityTests(unittest.TestCase):
     def test_install_refuses_symlink_directory_and_dangling_file(self):
         with TemporaryDirectory() as tmp, TemporaryDirectory() as outside:
             target, external = Path(tmp), Path(outside)
-            (target / 'docs').symlink_to(external, target_is_directory=True)
+            try:
+                (target / 'docs').symlink_to(external, target_is_directory=True)
+            except OSError as error:
+                self.skipTest(f'Symlink creation unavailable on this host: {error}')
             template = target / 'templates/ADR.md'
             template.parent.mkdir()
             template.symlink_to(external / 'missing')
