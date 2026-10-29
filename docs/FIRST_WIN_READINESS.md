@@ -13,8 +13,9 @@ Fetched remote main: `04c37fb517a0d288822ef9ea12e6e29ea6cb10c4`, version `2.0.0`
 proposed/unreleased. Existing PRs #1/#2 merged. No main/handbook history rewritten.
 Implementation branches start from main; the handbook remains a separate review.
 First bounded correction: `eafc134` / PR #4, then the stacked synthetic-pilot increment.
-Exact final commit and source SHA256s are recorded in the evaluation/PR evidence; code
-identity is not inferred from the version number. No release tag is created.
+Executable source verified at clean commit `5e757cb489ea3c45bc56c064f1d6f9ede35e18d9`.
+Later evidence-only commits preserve those executable bytes; final PR head and per-file
+SHA256s are recorded in the evidence. Code identity is not inferred from the version number. No release tag is created.
 
 Environment: macOS 26.6.2 arm64, Python 3.11.7 (Clang 14.0.6). No packages installed.
 Runtime/reference checks use Python standard library. Author-only browser QA uses the
@@ -33,6 +34,10 @@ python scripts/verify_standard.py                   # PASS
 git diff --check                                   # PASS
 PYTHONPATH=. python out/first-win/browser-smoke.py    # author-only automation; 20 positive journeys
 ```
+
+Frozen records: [verification](evidence/first-win/verification.json),
+[development comparison](evidence/first-win/investigation-evaluation.json) and
+[browser automation](evidence/first-win/browser-smoke.json). These are author observations.
 
 The preflight also runs the original seven retrieval cases, 30 public domain cases, change
 demo and tool-policy trace demo. Original tests preserved. Cold packet and snapshot results
@@ -124,7 +129,7 @@ Observed development run (32 cases, eight positive dependency cases, five timing
 |---|---|---|
 | Mean required-function locator recall, 8 positive author-labeled cases | 0.1994 | 1.0000 |
 | Exact expected status/nodes/edges/unknowns + source bindings | Not an answer-producing baseline | 32/32 public development self-checks |
-| Positive lookup p50 / p95, 40 local timing samples | 0.2668 / 0.2853 ms | 0.2214 / 0.3207 ms |
+| Positive lookup p50 / p95, 40 local timing samples | 0.2765 / 0.3128 ms | 0.2238 / 0.3235 ms |
 | Runtime model/external calls | 0 / 0 | 0 / 0 |
 | Human active minutes, total costs, independent accuracy | Unmeasured | Unmeasured |
 
