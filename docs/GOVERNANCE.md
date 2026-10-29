@@ -30,6 +30,9 @@ Examples, labs and templates are explanatory, not additional normative sources.
 
 The visual field guide in `docs/field-guide/` is explanatory and generated from `content.json`.
 Its page-level sources point to canonical rules. It grants no permissions or new maturity.
+The technical handbook in `docs/handbook/` is an explanatory teaching companion owned by
+the human learning owner and maintainer. Its JSON source generates PDF, HTML and Markdown;
+dated primary references support mechanisms/comparisons, not enterprise certification.
 
 This is the documentation ownership map. Remaining `docs/` playbooks, blueprint, roadmap,
 performance, brownfield and references pages are navigation/application guidance; their

@@ -12,6 +12,12 @@ Versions describe the standard, not production maturity. No tag is implied.
   independent resolver assessment and staged first-win evidence record. Independent domain
   verification, protected holdout, employee use and measured business benefit remain pending.
 
+- Add an in-depth illustrated handbook in PDF, self-contained HTML and readable Markdown:
+  model/retrieval mechanisms, state/reliability/security, evaluation mathematics, human-only
+  and AI-assisted workflows, worked synthetic cases and sourced methodology comparisons.
+  It explains existing rules and distinguishes implemented behavior from target designs;
+  no comparative superiority, production readiness or human mastery is asserted.
+
 - Add a monochrome visual field guide, Windows offline first-use instructions, committed
   snapshot ZIP/checksum tooling, and a single offline preflight command. Python/model
   provisioning and Windows execution remain explicit target prerequisites.

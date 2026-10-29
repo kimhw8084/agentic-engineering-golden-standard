@@ -22,7 +22,10 @@ REQUIRED = ('AGENTS.md', 'README.md', 'docs/ARCHITECTURE.md',
             'docs/PRODUCT_DELIVERY.md', 'docs/SKILL_PUBLICATION.md', 'docs/V2_VERIFICATION.md',
             'OFFLINE_START.md', 'scripts/offline_preflight.py', 'scripts/verify_transfer.py',
             'docs/field-guide/content.json', 'docs/field-guide/field-guide.pdf',
-            'academy/assessment/README.md', 'academy/assessment/check_submission.py')
+            'academy/assessment/README.md', 'academy/assessment/check_submission.py',
+            'docs/handbook/content.json', 'docs/handbook/HANDBOOK.md',
+            'docs/handbook/agentic-engineering-handbook.html',
+            'docs/handbook/agentic-engineering-handbook.pdf')
 NAME_RE = re.compile(r'^[a-z0-9]+(?:-[a-z0-9]+)*$')
 
 

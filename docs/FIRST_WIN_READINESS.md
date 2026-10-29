@@ -2,6 +2,10 @@
 
 **Decision: local synthetic proof only. No real manufacturing win, independent signoff,
 employee adoption or independently demonstrated human mastery has been established.**
+Integration note: on 2026-10-29 the user explicitly authorized merging to main. This
+dated report retains its pre-integration audit state; that authorization does not establish
+independent signoff, operational approval or production readiness.
+
 Working code and executed counterexamples now replace several specification-only gaps.
 Do not merge, deploy or substitute company sources without required review/authorization.
 
