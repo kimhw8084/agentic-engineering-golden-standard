@@ -26,7 +26,13 @@ def retrofit(target: Path, apply: bool = False) -> dict:
         for file in sorted(p for p in folder.rglob('*') if p.is_file()):
             relative = file.relative_to(SRC)
             dest = target / relative
-            if dest.exists():
+            # Refuse directory and dangling-file symlinks before any mkdir/copy.
+            # This is a single-process installer, not a defense against concurrent
+            # hostile filesystem replacement between check and copy.
+            parts = [target.joinpath(*relative.parts[:i]) for i in range(1, len(relative.parts) + 1)]
+            if any(p.is_symlink() for p in parts):
+                status = 'skip-symlink'
+            elif dest.exists():
                 status = 'skip-existing'
             elif apply:
                 dest.parent.mkdir(parents=True, exist_ok=True)
