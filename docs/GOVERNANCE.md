@@ -19,7 +19,7 @@ Examples, labs and templates are explanatory, not additional normative sources.
 | `docs/PRODUCT_DELIVERY.md` | Employee acceptance and adoption stages | Product/sponsor |
 | `docs/SKILL_PUBLICATION.md` | Skill packaging, rollout and rollback | Standard maintainer |
 | `docs/IMPACT_AND_EXECUTIVE_RECOGNITION.md` | Business measurement method | Sponsor/delivery owner |
-| `academy/README.md` | Mastery scoring; lectures explain, do not redefine it | Human learning owner |
+| `academy/README.md` | Mastery scoring, role-family readiness and assessment cadence; lectures/templates instantiate it | Human learning owner |
 | `academy/V2_INTEGRITY_EXERCISE.md` | Release-specific lab instantiating the mastery rubric | Human learning owner |
 | `docs/GLOSSARY.md` | Shared terminology | Standard maintainer |
 | `docs/adr/` | Numbered architectural decisions | Decision author + independent reviewer |

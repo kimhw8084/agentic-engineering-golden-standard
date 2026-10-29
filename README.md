@@ -8,6 +8,11 @@
 
 Every project should yield **(1) measured business value, (2) demonstrated software quality, and (3) independent engineering mastery**. Use this same standard for communication intelligence, manufacturing source-code intelligence, troubleshooting, artifact drafting, reporting and optimization. Do not merge those independent applications into one unsafe super-agent.
 
+This repository improves the reusable workflow and the learner's transferable capability.
+Its [roadmap](docs/ROADMAP.md) is separate from application playbooks. Select valuable work
+with the [ROI decision protocol](docs/IMPACT_AND_EXECUTIVE_RECOGNITION.md), including limited
+IT/support capacity, and maintain [current interview evidence](academy/README.md) as you work.
+
 ## In 10 minutes
 
 Requirements: **Python 3.11+**, Git. No external Python dependencies for the reference tests. OpenCode is optional for local exercises, required only for AI-assisted command/skill workflows.

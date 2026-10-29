@@ -2,6 +2,14 @@
 
 Versions describe the standard, not production maturity. No tag is implied.
 
+## Unreleased
+
+- Clarify the standard's own mission/backlog versus separately authorized application examples.
+- Extend canonical impact guidance with opportunity selection, full-cost/uncertainty treatment
+  and adoption under limited IT capacity; compare deterministic/no-model alternatives.
+- Add continuous role-specific interview assessment and a dated evidence snapshot; reuse
+  the existing mastery rubric and learning modules. No mastery or ROI outcome is asserted.
+
 ## 2.0.0 — proposed, unreleased
 
 - Fix hash/state atomicity, strict simulated-review inputs, ID substring boost and installer

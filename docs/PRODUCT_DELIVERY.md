@@ -26,7 +26,10 @@ Outages must not appear as absence. Assign support, retention and rollback owner
 Promote by evidence, not date. Regress when safety/value fails. Measurement formula stays
 in `IMPACT_AND_EXECUTIVE_RECOGNITION.md`; release gates in `DEFINITION_OF_DONE.md`.
 
-## Next Manufacturing System Intelligence task
+## Example adoption task for a consuming Manufacturing System Intelligence project
+
+This example belongs in a separately authorized application. The standard's own backlog
+is in `ROADMAP.md`; improving this repository does not start that application work.
 
 Build one synthetic revision-pinned `sample_count` path investigation in the existing app:
 config → parser → validator → dispatcher, including unknown dynamic dispatch. Compare two
