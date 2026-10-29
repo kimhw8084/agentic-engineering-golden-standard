@@ -15,6 +15,11 @@ IT/support capacity, and maintain [current interview evidence](academy/README.md
 
 ## In 10 minutes
 
+For the detailed science, design rationale, illustrated workflows, human-only operation,
+worked use cases and methodology comparisons, read the
+[technical handbook](docs/handbook/HANDBOOK.md). A [static browser copy](docs/handbook/agentic-engineering-handbook.html)
+and [printable PDF](docs/handbook/agentic-engineering-handbook.pdf) are included for offline use.
+
 For a one-way transfer to a Windows work PC, start with [OFFLINE_START.md](OFFLINE_START.md)
 and the [visual field guide](docs/field-guide/field-guide.pdf). The guide is a generated
 explanation of canonical rules; preflight is offline and needs approved Python 3.11+.
