@@ -28,10 +28,12 @@ class Evidence:
     @classmethod
     def from_dict(cls, x: dict) -> 'Evidence':
         required = ('record_id', 'source', 'revision', 'text', 'permitted_roles', 'timestamp')
-        if any(k not in x for k in required):
-            raise ValueError('Evidence record missing required fields')
-        if not x['record_id'] or not x['permitted_roles']:
-            raise ValueError('Missing evidence ID or roles')
+        if (not isinstance(x, dict) or set(x) != set(required)
+                or any(not isinstance(x[k], str) for k in required if k != 'permitted_roles')
+                or any(not x[k].strip() for k in ('record_id', 'source', 'revision', 'timestamp'))
+                or not isinstance(x['permitted_roles'], list) or not x['permitted_roles']
+                or any(not isinstance(r, str) or not r.strip() for r in x['permitted_roles'])):
+            raise ValueError('Evidence record violates exact schema')
         return cls(x['record_id'], x['source'], x['revision'], x['text'],
                    frozenset(x['permitted_roles']), x['timestamp'])
 
