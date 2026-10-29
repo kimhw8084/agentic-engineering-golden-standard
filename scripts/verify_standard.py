@@ -4,16 +4,35 @@ from pathlib import Path
 import json
 import re
 import sys
+import tomllib
+
+# Support both direct script invocation and python -m scripts.verify_standard.
+if __package__:
+    from .skill_manifest import manifest_errors
+else:
+    from skill_manifest import manifest_errors
 
 ROOT = Path(__file__).resolve().parents[1]
 REQUIRED = ('AGENTS.md', 'README.md', 'docs/ARCHITECTURE.md',
             'docs/DEFINITION_OF_DONE.md', 'academy/README.md',
-            'scripts/retrofit.py', 'tests/test_change.py', 'tests/test_retrieval.py')
+            'scripts/retrofit.py', 'tests/test_change.py', 'tests/test_retrieval.py',
+            '.github/CODEOWNERS', 'CHANGELOG.md', 'docs/GOVERNANCE.md', 'docs/GLOSSARY.md',
+            'docs/V1_GAP_MATRIX.md', 'docs/MIGRATION_V2.md', 'docs/RUNTIME_CONTRACTS.md',
+            'docs/AGENT_PATTERNS.md', 'docs/CONTEXT_ENGINEERING.md', 'docs/TOOL_TRUST.md',
+            'docs/PRODUCT_DELIVERY.md', 'docs/SKILL_PUBLICATION.md', 'docs/V2_VERIFICATION.md')
 NAME_RE = re.compile(r'^[a-z0-9]+(?:-[a-z0-9]+)*$')
 
 
 def verify() -> list[str]:
     errors = [f'missing {p}' for p in REQUIRED if not (ROOT / p).is_file()]
+    version = tomllib.loads((ROOT / 'pyproject.toml').read_text())['project']['version']
+    package_version = re.search(r'^__version__ = "([^"]+)"',
+                                (ROOT / 'golden/__init__.py').read_text(), flags=re.M)
+    if not package_version or package_version.group(1) != version:
+        errors.append('package version differs from pyproject.toml')
+    if f'## {version}' not in (ROOT / 'CHANGELOG.md').read_text():
+        errors.append('version missing from changelog')
+    errors.extend(manifest_errors(ROOT))
     for file in (ROOT / '.opencode/skills').glob('*/SKILL.md'):
         text = file.read_text(encoding='utf-8')
         if not text.startswith('---\n'):

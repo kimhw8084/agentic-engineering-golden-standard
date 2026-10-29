@@ -43,6 +43,10 @@ class Hit:
 
 
 class EvidenceIndex:
+    """Full-scan lexical baseline; rebuilds visible term counts on every query.
+
+    No BM25 length normalization, inverted index, semantic or revision filtering.
+    """
     def __init__(self, records: Iterable[Evidence]):
         self.records = tuple(records)
         identifiers = [r.record_id for r in self.records]
@@ -50,7 +54,7 @@ class EvidenceIndex:
             raise ValueError('Duplicate evidence identifiers')
 
     def search(self, query: str, roles: frozenset[str], top_k: int = 3) -> list[Hit]:
-        if top_k < 1 or top_k > 100:
+        if type(top_k) is not int or top_k < 1 or top_k > 100:
             raise ValueError('top_k out of bounds')
         if not query.strip():
             return []
@@ -71,7 +75,7 @@ class EvidenceIndex:
             score = sum((1.0 + log(1 + N / (1 + df[w]))) * min(bag[w], 3) * min(qn, 2)
                         for w, qn in query_terms.items() if bag[w])
             # Exact identifiers are exceptionally important in manufacturing.
-            if record.record_id.lower() in query.lower():
+            if record.record_id.lower() in query_terms:
                 score += 20
             if score > 0:
                 hits.append(Hit(record, round(score, 5)))

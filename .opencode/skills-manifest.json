@@ -1,0 +1,18 @@
+{
+  "manifest_version": 1,
+  "standard_version": "2.0.0",
+  "supporting_files": "Pin all referenced guidance to the same reviewed Git commit.",
+  "skills": {
+    ".opencode/skills/agent-workflow/SKILL.md": "4d3b37f49516d1272515935e4307369f96a4c46045c64e9113f1ce1d85b026db",
+    ".opencode/skills/architecture-review/SKILL.md": "645eca7407d371bd79daa66a2f3807469d30a913da2d08a96ef94140fe01acf1",
+    ".opencode/skills/delivery-gate/SKILL.md": "fc64e0df62ddb954b076efd935a3b15b6942be50b2e6fd388f0313960f3ef4b0",
+    ".opencode/skills/engineering-mastery/SKILL.md": "c0bd58d9fbf16cae9b983bb8565c2071c3e3ab4c4451cd1a8a77196adace029e",
+    ".opencode/skills/evaluation-design/SKILL.md": "83dcd953a8b0c23e52d1f1cbb834622423821afedb66377d2b5983c682dfb45c",
+    ".opencode/skills/evidence-retrieval/SKILL.md": "bbf94a0b8ad833c5c644f6f03057506c21e1b2deef36022fe32570f391cd96fa",
+    ".opencode/skills/impact-measurement/SKILL.md": "078b9be59cb6bb2656ff1f3deb9ca5f5eeafa1aea5fa3e3a617f23497f34111a",
+    ".opencode/skills/interview-defense/SKILL.md": "4e56d8a2a08142a3558d35920bd227909ccf96372fd0c7eebf3a3ffbfd9e45c4",
+    ".opencode/skills/performance-lab/SKILL.md": "b1e10d2a58e60e65f367a6cbec96fd5bc6d55eb1f9fcb72ab3466c626cafe5bc",
+    ".opencode/skills/project-audit/SKILL.md": "e59a79e4ca35a565134e12e8214c37d0770306330b0568eb3136dffb729872c2",
+    ".opencode/skills/security-review/SKILL.md": "673b286a589112077cfd448c68cc324227df0af70bd6e05794abaead1dc40069"
+  }
+}

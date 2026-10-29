@@ -10,5 +10,7 @@ run.set_draft({'change_id': 'SYNTH-001', 'system': 'DEMO_METROLOGY', 'revision':
 run.validate(frozenset({'DEMO_METROLOGY'}))
 run.review('fixture-independent-reviewer', is_independent=True)
 exported = run.export()
-print(json.dumps({'status': run.status, 'exported_local_draft': exported,
+print(json.dumps({'status': run.status, 'review_basis': 'unverified_caller_assertion',
+                  'limitations': 'In memory, one-shot transitions, mutable events; no authenticated approval or audit integrity.',
+                  'exported_local_draft': exported,
                   'events': run.events}, indent=2))

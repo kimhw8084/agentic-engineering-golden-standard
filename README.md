@@ -2,7 +2,7 @@
 
 **A GitHub-template-ready engineering operating system for OpenCode + an approved internal LLM.**
 
-> **Status: v1.0 teaching/reference template.** Includes genuine runnable baseline code and regression tests, not an enterprise-deployed agent. Uses synthetic inputs only. It does **not** implement company identity, production approvals, live APIs, a real embedding service, scheduling, or equipment actions.
+> **Status: v2.0 proposed teaching/reference template (L1).** Includes runnable baseline code and regression tests, not an enterprise-deployed agent. Uses synthetic inputs only. It does **not** implement company identity, production approvals, live APIs, a real embedding service, scheduling, or equipment actions. Human review and release tagging remain pending.
 
 ## Purpose
 
@@ -17,6 +17,8 @@ python scripts/verify_standard.py
 python -m unittest discover -s tests -v
 python -m scripts.evaluate_fixture
 python -m scripts.change_demo
+python -m scripts.trace_demo
+python -m scripts.skill_manifest
 ```
 
 Then open this repository in OpenCode and use `/golden-audit`. No model or provider is configured by the template; your approved internal settings are preserved.
@@ -107,3 +109,9 @@ This is not: a replacement for company approvals; a production-ready employee-em
 `docs/ROADMAP.md` • `docs/DEFINITION_OF_DONE.md` • `docs/SECURITY_THREAT_MODEL.md` • `docs/QUALITY_AND_EVALUATIONS.md` • `academy/README.md`.
 
 Sources and OpenCode compatibility links are in `docs/REFERENCES.md`.
+
+For v2 review start with [verified v1 gaps](docs/V1_GAP_MATRIX.md),
+[rule ownership](docs/GOVERNANCE.md), [migration](docs/MIGRATION_V2.md),
+[changelog](CHANGELOG.md) and [executed verification](docs/V2_VERIFICATION.md).
+Pattern/context/tool contracts are indexed by governance. Employee acceptance and
+adoption gates live in [product delivery](docs/PRODUCT_DELIVERY.md).

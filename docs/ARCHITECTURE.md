@@ -8,21 +8,27 @@
 
 **Privileged execution:** deployment, production modifications, recipe actions and manufacturing commands are performed only through pre-existing company-authorized identity and change controls, independent of the model and isolated from untrusted generated text. This repo implements no such executor.
 
-## Data contracts (target specification, not implemented enterprise APIs)
+## Contracts and capability boundary
 
-- `TaskRequest`: actor identity from trusted identity provider, tenant, role, purpose, task type, target scope, version and idempotency key.
-- `EvidenceRef`: source system, opaque record ID, permission scope, timestamp/timezone, immutable content revision/hash, lineage, canonical locator, retrieval time.
-- `ToolInvocation`: tool id/version, allowlisted input schema, bounded timeout/retry policy, data classification, audit record.
-- `DraftArtifact`: schema version, generator version, exact fields, content hash, provenance, environment classification.
-- `ValidationResult`: validator version, passed rules, field-level failures, timestamp, hash, test environment.
-- `Approval`: trusted reviewer ID, reviewed artifact hash, scope/expiry, independent approval policy and signature produced by approved system.
-- `RunTrace`: run ID, trace/span, model and prompt/skill versions, tool telemetry, duration, cost proxy, errors, outcome classification.
+Versioned target contracts and lifecycle semantics live in [RUNTIME_CONTRACTS.md](RUNTIME_CONTRACTS.md).
+Context assembly, pattern choice and tool policy are separate canonical specifications
+listed in [GOVERNANCE.md](GOVERNANCE.md). These are requirements for consuming applications,
+not implemented enterprise APIs.
 
-In production *every authorization must be enforced again on the server/tool and data store*, not supplied by an LLM and not represented by the demo's caller-controlled role strings.
+Implemented here: full-scan synthetic lexical retrieval, simulated role filtering,
+in-memory hash/state gates, offline evaluation and no-overwrite retrofit. Absent:
+authentication, source ACLs, persistence/locking, idempotency storage, signed audit,
+model/embedding endpoints, scheduler, UI and operational approvals.
 
 ## State and safety
 
-Desired production-oriented flow: `requested → evidence_ready → drafted → validated → review_pending → approved → handed_off`. Invalid states: `blocked`, `rejected`, `expired`, `quarantined`. Retries use deterministic idempotency keys; timeouts and interruptions persist state; approvals bind exact hashes and permissible target scope. The reference demo models only a simplified in-memory subset; persistence/locking is deliberately absent.
+`ChangeRun` implements only `created → evidence_ready → drafted → validated → reviewed → exported`.
+Draft replacement from drafted/validated clears hashes; each gate rehashes current content.
+`reviewed` means an unverified caller assertion, and `exported` means a local returned copy.
+Repeated transitions fail; restart loses state. Mutable `events` are diagnostics, not an
+integrity-protected audit log. The caller can mutate this Python object: it is no security
+boundary. Target failure states and cancellation are defined in the runtime contract;
+they are valid outcomes, not inherently invalid states.
 
 ## Composition strategy
 

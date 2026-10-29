@@ -7,6 +7,8 @@
 - OpenCode configuration: https://docs.opencode.ai/docs/config/
 - OpenCode permissions: https://docs.opencode.ai/docs/permissions/
 - OpenCode MCP: https://docs.opencode.ai/docs/mcp-servers/
+- MCP tool trust (versioned specification): https://modelcontextprotocol.io/specification/2025-06-18/server/tools
+- Composable agent patterns: https://www.anthropic.com/research/building-effective-agents
 - GitHub Actions Python: https://docs.github.com/en/actions/tutorials/build-and-test-code/python
 - OWASP Top 10 for LLM Applications: https://genai.owasp.org/llm-top-10/
 - OWASP Agentic AI security resources: https://genai.owasp.org/
@@ -20,3 +22,7 @@
 - Google SRE workbook: https://sre.google/workbook/table-of-contents/
 
 These are learning/standards references; not claims that this starter implements/certifies every listed standard. Check your internal team's product/version and dependency allowlist before using examples.
+
+The MCP tool trust text and Anthropic pattern taxonomy were checked on 2026-10-28.
+The numeric budgets and approval/pinning rules in this repository are local design choices,
+not protocol requirements or vendor performance guarantees.
