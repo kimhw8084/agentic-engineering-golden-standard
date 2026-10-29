@@ -4,6 +4,14 @@ Versions describe the standard, not production maturity. No tag is implied.
 
 ## Unreleased
 
+- Reject malformed string scope sets and evidence role lists; retain adversarial
+  counterexamples showing caller identity, mutable hash and partial-hit limitations.
+- Add a bounded synthetic revision-aware investigation, browser journey and separate-process
+  SQLite stop/cancel/recovery drill. No company data, production executor or model added.
+- Add a 32-case public development self-check, literal-locator comparison, risk mapping,
+  independent resolver assessment and staged first-win evidence record. Independent domain
+  verification, protected holdout, employee use and measured business benefit remain pending.
+
 - Add an in-depth illustrated handbook in PDF, self-contained HTML and readable Markdown:
   model/retrieval mechanisms, state/reliability/security, evaluation mathematics, human-only
   and AI-assisted workflows, worked synthetic cases and sourced methodology comparisons.

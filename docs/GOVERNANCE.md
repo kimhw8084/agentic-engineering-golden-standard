@@ -21,6 +21,7 @@ Examples, labs and templates are explanatory, not additional normative sources.
 | `docs/IMPACT_AND_EXECUTIVE_RECOGNITION.md` | Business measurement method | Sponsor/delivery owner |
 | `academy/README.md` | Mastery scoring, role-family readiness and assessment cadence; lectures/templates instantiate it | Human learning owner |
 | `academy/V2_INTEGRITY_EXERCISE.md` | Release-specific lab instantiating the mastery rubric | Human learning owner |
+| `academy/REVISION_RESOLVER_EXERCISE.md` | Pilot-specific independent resolver lab and honest defense record | Human learning owner |
 | `docs/GLOSSARY.md` | Shared terminology | Standard maintainer |
 | `docs/adr/` | Numbered architectural decisions | Decision author + independent reviewer |
 | `CHANGELOG.md`, `docs/MIGRATION_V2.md` | Release history and migration | Release owner |
@@ -40,6 +41,11 @@ canonical rules; `.opencode/` helpers link to them. `docs/V1_GAP_MATRIX.md` and
 `docs/V2_VERIFICATION.md` are historical evidence owned by the change author. New
 normative pages require a row here. Role names must be assigned to actual people before
 a company pilot; the sole current repository owner is not an independent second approver.
+
+`docs/FIRST_WIN_READINESS.md` is a dated evidence report, not a new standard.
+`examples/manufacturing/README.md` documents only the synthetic fixture's implemented
+interface and operator drill. Its risk register lives in the canonical threat model;
+evaluation/adoption/mastery rules remain in their existing homes.
 
 `CODEOWNERS` routes review to the known repository owner; it does not enforce branch
 protection, security expertise or reviewer independence. Configure required reviews/checks

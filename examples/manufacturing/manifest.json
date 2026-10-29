@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "classification": "synthetic",
+  "label_status": "author-curated; independent source-owner review pending",
+  "snapshots": {
+    "r1": {
+      "path": "examples/manufacturing/r1.py",
+      "sha256": "b1faad7963f99fe97e9942bab6b7421df50c6bc0de20fb06f34639e40c6186d9"
+    },
+    "r2": {
+      "path": "examples/manufacturing/r2.py",
+      "sha256": "1d7207faa21303bf8677f86472cad9a26d2c4193bfe7d964272a3fb81d3662ef"
+    }
+  },
+  "parameters": {
+    "sample_count": {
+      "root": "sample_path",
+      "scope": "synthetic:read"
+    },
+    "exposure_ms": {
+      "root": "exposure_path",
+      "scope": "synthetic:read"
+    },
+    "cycle_count": {
+      "root": "cycle_a",
+      "scope": "synthetic:read"
+    },
+    "missing_count": {
+      "root": "missing_path",
+      "scope": "synthetic:read"
+    },
+    "restricted_gain": {
+      "root": "restricted_path",
+      "scope": "synthetic:restricted"
+    }
+  }
+}

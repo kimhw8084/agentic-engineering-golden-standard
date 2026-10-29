@@ -19,7 +19,8 @@ def main():
     checks += [['scripts/verify_standard.py'], ['-m', 'unittest', 'discover', '-s', 'tests', '-v'],
                ['-m', 'scripts.evaluate_fixture', '--min-hit', '0.85'],
                ['-m', 'scripts.evaluate_fixture', '--cases', 'examples/fixtures/domain_cases.json', '--min-hit', '1.0'],
-               ['-m', 'scripts.change_demo'], ['-m', 'scripts.trace_demo']]
+               ['-m', 'scripts.change_demo'], ['-m', 'scripts.trace_demo'],
+               ['-m', 'scripts.evaluate_investigation', '--repeats', '5']]
     for check in checks:
         print('RUN', sys.executable, *check, flush=True)
         result = subprocess.run([sys.executable, *check], cwd=ROOT)

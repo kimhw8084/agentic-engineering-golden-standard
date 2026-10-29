@@ -1,0 +1,53 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Revision-aware investigation - synthetic pilot</title>
+<style>body{font:17px/1.5 Arial,sans-serif;color:#111;background:#eee;margin:0}main{max-width:900px;margin:24px auto;background:white;padding:32px}h1{font-size:28px}label{display:block;margin-top:14px}select,input,button{font:inherit;padding:9px;border:1px solid #777;background:white;color:black}button{margin:18px 8px 0 0;cursor:pointer}button:disabled{color:#777}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f4f4f4;padding:15px;font-size:14px}.note{border-left:4px solid black;padding-left:15px}li{margin-bottom:12px}details{margin:12px 0;border:1px solid #bbb;padding:10px}summary{cursor:pointer}textarea{max-width:100%;box-sizing:border-box}a{color:black}</style>
+<main><h1>Trace a parameter through a pinned revision</h1>
+<p class="note">Synthetic local demonstration. No company data, employee authentication, model, production access or equipment actions. Results show static source relationships; runtime behavior needs separate evidence.</p>
+<form id="form"><label for="revision">Source snapshot</label><select id="revision"><option>r1</option><option>r2</option><option value="unavailable">Unavailable snapshot (recovery example)</option></select>
+<label for="parameter">Parameter</label><input id="parameter" value="sample_count" maxlength="64" pattern="[a-z_][a-z_0-9]{0,63}" required>
+<p>Try sample_count, exposure_ms, missing_count, cycle_count or an unknown identifier. Every reference includes the exact source hash.</p>
+<button id="start">Investigate</button><button type="button" id="cancel" disabled>Cancel pending investigation</button><button type="button" id="save" disabled>Save result</button></form>
+<p id="status" role="status" aria-live="polite">Ready.</p><section id="result"></section>
+<label for="feedback">What was confusing or incorrect? Do not enter company information.</label><textarea id="feedback" rows="3" cols="65"></textarea><button type="button" id="feedbackSave">Save feedback locally</button>
+<p>Feedback is downloaded only to this computer; it is not sent to an external service. Reuse and help requests require an observed pilot session.</p></main>
+<script nonce="@@TOKEN@@">
+const token='@@TOKEN@@', $=id=>document.getElementById(id);let job=null,answer=null;
+async function api(path,method='GET',data,key){const headers={'X-Pilot-Token':token};if(key)headers['Idempotency-Key']=key;if(data)headers['Content-Type']='application/json';const r=await fetch(path,{method,headers,body:data?JSON.stringify(data):undefined});const value=await r.json();if(!r.ok)throw Error(value.error);return value;}
+function element(tag,text){const e=document.createElement(tag);e.textContent=text;return e;}
+function show(value){
+ const output=$('result');output.replaceChildren();if(!value)return;
+ output.append(element('h2',`Outcome: ${value.status}`));
+ if(value.snapshot_sha256)output.append(element('pre',`Exact snapshot SHA256: ${value.snapshot_sha256}`));
+ if((value.nodes||[]).length){output.append(element('h2','Inspect the source evidence'));}
+ for(const n of value.nodes||[]){
+  const details=document.createElement('details');
+  details.append(element('summary',`${n.symbol}: ${n.ref.path} @ ${n.ref.revision}, lines ${n.ref.line_start}-${n.ref.line_end}`));
+  details.append(element('pre',n.ref.excerpt));output.append(details);
+ }
+ if((value.edges||[]).length){
+  output.append(element('h2','Static local calls'));
+  const list=document.createElement('ul');
+  for(const edge of value.edges)list.append(element('li',`${edge.from} → ${edge.to} (line ${edge.ref.line_start})`));
+  output.append(list,element('p','These calls appear in the source. Branches and runtime selection can change which calls execute.'));
+ }
+ if((value.unresolved||[]).length){
+  output.append(element('h2','Unresolved dependencies'));
+  const list=document.createElement('ul');
+  for(const u of value.unresolved){
+   const label=u.kind==='dynamic_dispatch'?'Runtime mapping unavailable':u.kind==='missing_source'?'Referenced source unavailable':u.kind;
+   list.append(element('li',`${label}: ${u.target}${u.ref?' (line '+u.ref.line_start+')':''}`));
+  }output.append(list);
+ }
+ for(const assumption of value.assumptions||[])output.append(element('p',assumption));
+ if(['unavailable','denied','abstained'].includes(value.status))output.append(element('p','No supported result. Check the authorized snapshot and parameter, or contact the source owner. Unavailable evidence does not mean no dependency exists.'));
+}
+function outcomeMessage(s){
+ if(s.state==='succeeded')return {supported:'Static source investigation complete. Runtime behavior is not proven.',partial:'Partial investigation. Review unresolved dependencies below.',unavailable:'Source unavailable. Choose a supplied snapshot or contact the source owner.',denied:'Access denied. Contact the source owner.',abstained:'No supported mapping. Check the parameter with the source owner.'}[s.result.status]||'Investigation returned an unknown outcome; contact the operator.';
+ return s.state==='failed'?'Source inspection failed. Ask the operator to check integrity or availability.':`Investigation ${s.state}.`;
+}
+function download(name,value){const a=document.createElement('a'),url=URL.createObjectURL(new Blob([JSON.stringify(value,null,2)],{type:'application/json'}));a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+$('form').onsubmit=async e=>{e.preventDefault();$('start').disabled=true;$('save').disabled=true;$('status').textContent='Inspecting the pinned synthetic snapshot...';answer=null;show(null);try{job=(await api('/api/jobs','POST',{revision:$('revision').value,parameter:$('parameter').value},crypto.randomUUID())).id;$('cancel').disabled=false;for(let i=0;i<110;i++){const s=await api('/api/jobs/'+job);if(!['queued','running'].includes(s.state)){answer=s.result;show(answer);$('status').textContent=outcomeMessage(s);$('save').disabled=!answer;break;}await new Promise(r=>setTimeout(r,100));if(i===109)throw Error('No terminal result received. Cancel and contact the operator.');}}catch(e){$('status').textContent=e.message;}finally{$('start').disabled=false;$('cancel').disabled=true;}};
+$('cancel').onclick=async()=>{try{const s=await api('/api/cancel/'+job,'POST',{});$('status').textContent=s.state==='already_terminal'?'Already completed; cancellation does not reverse completed work.':'Cancellation recorded. Admitted reads may finish; late results are discarded.';}catch(e){$('status').textContent=e.message;}};
+$('save').onclick=()=>download('synthetic-investigation.json',answer);
+$('feedbackSave').onclick=()=>download('synthetic-feedback.json',{job,feedback:$('feedback').value,recorded_at:new Date().toISOString(),observed_human_session:false});
+</script></html>

@@ -15,6 +15,11 @@ IT/support capacity, and maintain [current interview evidence](academy/README.md
 
 ## In 10 minutes
 
+For the working revision-aware synthetic investigation, see the
+[pilot and operator drill](examples/manufacturing/README.md) and
+[Engineering Readiness and First-Win Report](docs/FIRST_WIN_READINESS.md).
+This local browser fixture has no company authentication/data or proven business savings.
+
 For the detailed science, design rationale, illustrated workflows, human-only operation,
 worked use cases and methodology comparisons, read the
 [technical handbook](docs/handbook/HANDBOOK.md). A [static browser copy](docs/handbook/agentic-engineering-handbook.html)

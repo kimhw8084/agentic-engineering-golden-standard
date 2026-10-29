@@ -10,6 +10,15 @@ and reconcile collisions manually; a skip is not an upgrade. Installer copies gu
 not Python fixes/tests. Assign people to owners and configure required PR checks.
 No merge, tag, deployment or production permission is implied.
 
+2026-10-29 verification increment: `Evidence.from_dict` now rejects unknown fields,
+non-string metadata and string/invalid role lists; `ToolPolicy.check` requires a frozenset
+of nonblank scope strings and a literal boolean cancellation flag. Correct malformed
+callers; this does not authenticate grants. Existing valid fixtures/callers are preserved.
+The optional synthetic browser pilot creates only ignored local `workspace/` state and
+does not migrate ChangeRun or an existing application. Its unreleased DB schema has no
+upgrade promise; archive needed synthetic evidence and provision a fresh workspace when
+the fixture schema changes. Never replace an internal app/database with this fixture.
+
 | Change | Consumer action |
 |---|---|
 | review requires literal True + nonblank string | Remove truthy strings/integers; review remains an unverified caller assertion |

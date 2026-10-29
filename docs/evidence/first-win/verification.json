@@ -1,0 +1,35 @@
+{
+  "recorded_at_utc": "2026-10-29T12:41:33.952389+00:00",
+  "verified_source_commit": "5e757cb489ea3c45bc56c064f1d6f9ede35e18d9",
+  "source_tree_was_clean_at_run": true,
+  "standard_version": "2.0.0 proposed/unreleased",
+  "environment": {
+    "python": "3.11.7 (main, Dec 15 2023, 12:09:56) [Clang 14.0.6 ]",
+    "platform": "macOS-26.6.2-arm64-arm-64bit"
+  },
+  "command": "python scripts/offline_preflight.py",
+  "exit_code": 0,
+  "unit_tests": 79,
+  "failures": 0,
+  "skips": 0,
+  "checks": [
+    "standard structure",
+    "all original and new unit/integration tests",
+    "7 legacy retrieval cases",
+    "30 public domain retrieval cases",
+    "change demo",
+    "tool policy trace demo",
+    "32 public investigation development cases"
+  ],
+  "preflight_log_sha256": "f00703f739a3226866372fc2e7b5c8d13fd1958a7a5a8ef748e410131f4a2108",
+  "scope": "Author-executed synthetic checks; not independent human signoff, corporate ROI or user mastery",
+  "preserved_settings": [
+    "AGENTS.md",
+    "opencode.json",
+    ".opencode/"
+  ],
+  "artifacts": {
+    "investigation-evaluation.json": "e7f1b66b0acdf26dba0649dcfb8370946bf72b5b851e95f2150a561b78cb30f6",
+    "browser-smoke.json": "0e3b24c4d4240bee00cdf4e8111f4ed3090edb930c70839c0b2b7eafe1ca1873"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "scope": "Synthetic automated browser smoke, NOT observed employee usability",
+  "completed_investigations": 20,
+  "revision_mix": "alternating r1/r2 sample_count",
+  "click_to_render_ms": {
+    "p50": 47.936,
+    "p95": 59.567,
+    "samples": [
+      65.33820787444711,
+      59.56741701811552,
+      59.2695833183825,
+      49.16779091581702,
+      46.356082893908024,
+      53.2838748767972,
+      43.414415791630745,
+      47.05720813944936,
+      46.27245897427201,
+      52.68516717478633,
+      43.86600013822317,
+      49.5301247574389,
+      45.83691665902734,
+      48.66370791569352,
+      47.20799997448921,
+      51.15804122760892,
+      42.83720813691616,
+      52.047333214432,
+      44.53658312559128,
+      47.15899983420968
+    ]
+  },
+  "implementation_sha256": {
+    "golden/investigation.py": "41aa8adef26c3f9b54cbeeb8beaa6935e4bb95123b47dd5ab882ff6cb3bb77a1",
+    "golden/pilot_control.py": "8129c6e8824e5dd9d9ab2c5f1bae09e7061743ef94331b9a4c52a29514d5a00d",
+    "scripts/investigation_app.py": "1c3cba70cf1ce4e9d8f94b21bf82568306aaea9714f6368ed24276cda289038f",
+    "examples/manufacturing/app.html": "e7db04a7723bc28714f2e34df757869eb7ff0f88bdc5c3bad29a1368f1f079c4"
+  },
+  "checks": [
+    "revision excerpts",
+    "missing/dynamic dependency",
+    "JSON download",
+    "unavailable recovery",
+    "external stop denial",
+    "no external requests",
+    "no page errors"
+  ]
+}
