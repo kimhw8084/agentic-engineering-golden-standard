@@ -40,7 +40,7 @@ def retrofit(target: Path, apply: bool = False) -> dict:
                 status = 'copied'
             else:
                 status = 'would-copy'
-            manifest.append({'path': str(relative), 'status': status})
+            manifest.append({'path': relative.as_posix(), 'status': status})
     return {'target': str(target), 'mode': 'apply' if apply else 'dry-run',
             'note': 'Review copied files and existing AGENTS.md/config manually; never overwrite existing files.',
             'files': manifest}

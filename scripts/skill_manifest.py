@@ -12,7 +12,7 @@ def build_manifest(root: Path = ROOT) -> dict:
     version = tomllib.loads((root / 'pyproject.toml').read_text())['project']['version']
     return {'manifest_version': 1, 'standard_version': version,
             'supporting_files': 'Pin all referenced guidance to the same reviewed Git commit.',
-            'skills': {str(p.relative_to(root)): sha256(p.read_bytes()).hexdigest()
+            'skills': {p.relative_to(root).as_posix(): sha256(p.read_bytes()).hexdigest()
                        for p in sorted((root / '.opencode/skills').glob('*/SKILL.md'))}}
 
 

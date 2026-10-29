@@ -8,6 +8,7 @@ from scripts import verify_standard
 class PublicationTests(unittest.TestCase):
     def test_checked_in_standard_and_manifest(self):
         self.assertEqual(verify_standard.verify(), [])
+        self.assertTrue(all('\\' not in name for name in build_manifest()['skills']))
 
     def test_missing_and_changed_skill_detected(self):
         import json
