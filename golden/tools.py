@@ -23,6 +23,12 @@ class ToolPolicy:
     def check(self, *, server_id: str, definition: dict, actor_scopes: frozenset[str],
               required_scope: str, classification: str, calls_used: int,
               remaining_ms: int, canceled: bool = False) -> None:
+        # A string has substring membership semantics; it is not a set of grants.
+        if (not isinstance(actor_scopes, frozenset)
+                or any(not isinstance(s, str) or not s.strip() for s in actor_scopes)
+                or type(canceled) is not bool
+                or type(self.max_calls) is not int or self.max_calls < 1):
+            raise ToolDenied('input_contract')
         if canceled:
             raise ToolDenied('canceled')
         if type(remaining_ms) is not int or remaining_ms <= 0:

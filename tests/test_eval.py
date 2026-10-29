@@ -49,3 +49,9 @@ class EvaluationTests(unittest.TestCase):
                               ROOT/'examples/fixtures/domain_cases.json')
         self.assertEqual(result['unauthorized_cases'], 0)
         self.assertEqual(result['hit_at_k'], 1)
+
+    def test_legacy_hit_pass_does_not_establish_complete_dependencies(self):
+        result = self.evaluate([{'id': 'partial', 'question': 'SOP-3', 'roles': ['engineer'],
+                                 'expected': ['SOP-3', 'VAL-02']}])
+        self.assertEqual(result['hit_at_k'], 1)
+        self.assertEqual(result['recall_at_k'], 0.5)
