@@ -1,30 +1,41 @@
-# Delivery plan — accelerate without pretending certainty
+# Standard improvement roadmap
 
-## First 48 hours
-- Run fixture tests; learn repo structure.
-- Audit two current repositories read-only.
-- Identify exactly one workflow per repo; owners, ACLs, baseline and negative cases.
-- Install only missing OpenCode helpers via dry run then explicit apply.
-- Make first ADR and personal mastery gap entry.
+The maintained product here is a reusable engineering standard and learning system.
+It joins organizational value, verifiable quality and independently demonstrated human
+expertise. Semiconductor metrology supplies demanding examples; the contracts must also
+transfer to other fields. Work Intelligence and Manufacturing System Intelligence are
+consuming applications, not assignments to build them in this repository.
 
-## Week 1
-- Freeze 20–40 representative approved/synthetic cases per narrow workflow.
-- Implement one reproducible vertical slice each for Work Intelligence and Manufacturing System Intelligence, or prioritize one if staff is constrained.
-- Add source/provenance contract, role checks at real boundary (subject to access), and fixture tests.
-- Capture baseline (quality, request latency, human touch time) before improvements.
+## Next bounded improvements to the standard
 
-## Weeks 2–4
-- Improve retrieval and explanation of one approved workflow; PR+CI gates, negative tests, measured comparison.
-- If business value validated, trial metrology operational-file change package drafting with existing domain validators and independent company review.
-- No recipe/equipment/production writes in this phase.
+| Order | Improvement | Reviewable exit evidence |
+|---|---|---|
+| 1 | Opportunity selection and continuous interview readiness | Canonical ROI selection protocol, current role/competency snapshot, helpers point to both; no invented savings or mastery |
+| 2 | Exercise and assessment quality | Trial one existing unaided lab, collect observed failure/defense evidence, correct ambiguous instructions; independent answers stay separate from generated solutions |
+| 3 | Transfer across organizational constraints | Walk the same guide through synthetic metrology and nonmanufacturing scenarios with different IT capacity; show where prerequisites block adoption |
+| 4 | Stronger evaluation evidence | Independent curator/domain reviewer executes the holdout and grading protocol under approved scope; publish permitted provenance and limitations |
+| 5 | Maintainable publication | Review, version and canary the standard; measure setup effort, helper failures and ongoing maintenance before wider distribution |
 
-## Months 2–3
-- Approved incrementally indexed data platform, cache invalidation/revisions/ACL tests, read-only tool adapters, tracing, recoverable background workers, expert-reviewed gold set.
+Each increment is a bounded PR, preserves working tests/model settings, and names its
+own evidence, uncertainty and rollback. Adding documentation is useful only if it changes
+a decision, observable behavior or assessment; reuse canonical pages before creating more.
+There is no universal maximum-ROI or all-role-readiness claim.
 
-## Months 4–6
-- Read-only cross-system investigation with typed event timeline, competing hypotheses and source evidence; sampling decision-support only with controlled experiments.
+## Per-change operating cadence
 
-## Months 6–12
-- More production-like testing, deployment operations, reliability targets, documented support ownership, two-team validated reuse, approved public-safe career case studies and mock system-design interviews.
+Choose a valuable problem with the impact protocol → specify/verify the smallest change
+→ teach the mechanism → require unaided coding/debugging and architecture defense → update
+the dated readiness snapshot and recall schedule. Use `academy/README.md` for assessment
+rules and `IMPACT_AND_EXECUTIVE_RECOGNITION.md` for value selection and measurement.
 
-Each phase requires **business evidence**, **safety evidence**, and **independent mastery proof**. Endpoints are contingent on access, results and sponsor support.
+At any interview date the learner should be able to show a current evidence packet:
+what they can implement independently, what they can defend, measured project outcomes
+and honest remaining gaps. A calendar-based curriculum is optional sequencing, not proof.
+
+## Applying the standard elsewhere
+
+An adopter separately authorizes one narrow workflow, assigns owners, runs the baseline,
+pilots a complete employee journey, measures net benefit, then decides team rollout and
+cross-group reuse. See `PRODUCT_DELIVERY.md` and the two `playbooks/` for example slices.
+Application work requires its own scope and repository; a request to improve this standard
+does not authorize accessing or building a company application.

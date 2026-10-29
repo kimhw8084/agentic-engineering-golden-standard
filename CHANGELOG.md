@@ -2,6 +2,21 @@
 
 Versions describe the standard, not production maturity. No tag is implied.
 
+## Unreleased
+
+- Add a monochrome visual field guide, Windows offline first-use instructions, committed
+  snapshot ZIP/checksum tooling, and a single offline preflight command. Python/model
+  provisioning and Windows execution remain explicit target prerequisites.
+- Add visible synthetic readiness checks without a solution or claimed human assessment.
+- Fix Windows manifest path separators and pin repository text to LF so publication
+  hashes stay stable across platforms; run the quality gate on Windows and Linux.
+
+- Clarify the standard's own mission/backlog versus separately authorized application examples.
+- Extend canonical impact guidance with opportunity selection, full-cost/uncertainty treatment
+  and adoption under limited IT capacity; compare deterministic/no-model alternatives.
+- Add continuous role-specific interview assessment and a dated evidence snapshot; reuse
+  the existing mastery rubric and learning modules. No mastery or ROI outcome is asserted.
+
 ## 2.0.0 — proposed, unreleased
 
 - Fix hash/state atomicity, strict simulated-review inputs, ID substring boost and installer

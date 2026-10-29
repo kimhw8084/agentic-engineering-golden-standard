@@ -8,7 +8,16 @@
 
 Every project should yield **(1) measured business value, (2) demonstrated software quality, and (3) independent engineering mastery**. Use this same standard for communication intelligence, manufacturing source-code intelligence, troubleshooting, artifact drafting, reporting and optimization. Do not merge those independent applications into one unsafe super-agent.
 
+This repository improves the reusable workflow and the learner's transferable capability.
+Its [roadmap](docs/ROADMAP.md) is separate from application playbooks. Select valuable work
+with the [ROI decision protocol](docs/IMPACT_AND_EXECUTIVE_RECOGNITION.md), including limited
+IT/support capacity, and maintain [current interview evidence](academy/README.md) as you work.
+
 ## In 10 minutes
+
+For a one-way transfer to a Windows work PC, start with [OFFLINE_START.md](OFFLINE_START.md)
+and the [visual field guide](docs/field-guide/field-guide.pdf). The guide is a generated
+explanation of canonical rules; preflight is offline and needs approved Python 3.11+.
 
 Requirements: **Python 3.11+**, Git. No external Python dependencies for the reference tests. OpenCode is optional for local exercises, required only for AI-assisted command/skill workflows.
 
@@ -19,6 +28,7 @@ python -m scripts.evaluate_fixture
 python -m scripts.change_demo
 python -m scripts.trace_demo
 python -m scripts.skill_manifest
+python scripts/offline_preflight.py
 ```
 
 Then open this repository in OpenCode and use `/golden-audit`. No model or provider is configured by the template; your approved internal settings are preserved.

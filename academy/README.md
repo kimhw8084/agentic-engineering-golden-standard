@@ -27,6 +27,47 @@
 
 A 4 is not a certification, hiring guarantee, academic degree or universal evaluation of seniority. Do not grade yourself based only on an agent's praise.
 
+## Continuous interview readiness
+
+Maintain `templates/READINESS_SNAPSHOT.md` as a dated evidence index, not a self-awarded
+credential. Readiness is specific to a role family, level and interview format. The shared
+core is coding, debugging, software/system design, agent/retrieval/evaluation judgment,
+security/reliability and clear evidence-based communication. Keep breadth visible while
+deepening one role-specific gap at a time; years on a calendar are not evidence.
+
+| Reference role family | Existing foundation | Additional evidence to demonstrate |
+|---|---|---|
+| Applied agent / product engineer | Modules 01/02/04/05/06 | Independently implement a bounded workflow, evaluate answer quality and defend employee experience |
+| Agent platform / backend engineer | Modules 01/02/03/05/07 | Concurrency, durable retries/cancel, API contracts, sandbox/resource boundaries and bottleneck diagnosis |
+| Retrieval / evaluation engineer | Modules 04/06 | Ground truth, metric counterexamples, holdout contamination, judge calibration and uncertainty analysis |
+| Reliability / security engineer | Modules 03/07 | Fault/abuse diagnosis, scope enforcement, recovery, incident evidence and operational tradeoffs |
+| Architect / technical lead | Modules 02/03/07/08 | Defend alternatives, ownership, cost/value, migration and multi-team adoption under constraints |
+
+These are local reference tracks, not exhaustive job requirements. Before a specific
+interview, date and map the actual job description to observed evidence and missing skills.
+Model training/research, ML math, distributed accelerator systems and specialist domains
+may require substantial study beyond this academy. For example, the official
+[Agent Infrastructure role](https://openai.com/careers/software-engineer-agent-infrastructure-san-francisco/)
+describes training-scale systems and virtualization expertise (checked 2026-10-28); this
+template's agent examples alone cannot demonstrate that depth.
+
+After each meaningful change, update the relevant competency with an unaided implementation
+or debug result, an architecture defense and a synthetic example outside the original
+domain. Use the existing 0–4 rubric; record assessor, date, hints, failed cases and artifact
+revision. AI-generated practice/results are assisted; only observed human performance
+supports independent mastery. Stale evidence retains history but needs reassessment.
+
+Suggested maintenance cadence: one short mixed-topic explanation/debug drill each week,
+one unseen timed coding/system-design assessment monthly, plus day 2/7/30 recall after
+new learning. These are local practice defaults, not validated guarantees. Before an
+interview, produce a 90-second project explanation, a five-minute tradeoff/failure defense,
+one executable unaided artifact and one source-approved impact story. If evidence is
+missing, mark the gap and select the next exercise; never average away a critical gap.
+
+Select a fresh transfer variant from `INTERVIEW_BANK.md`; a reviewer should add an unseen
+failure case rather than repeat a memorized answer. Keep generated worked solutions
+separate from unaided assessment. The learner's ability is unassessed until demonstrated.
+
 ## Every mastery record must contain
 
 A precise concept, implementation evidence, tests you ran, edge case debugged, complexity/failure analysis, architecture tradeoff, answer to three tough questions, and a reinforcement task scheduled for a later sprint. Template: `templates/MASTERY_RECORD.md`.

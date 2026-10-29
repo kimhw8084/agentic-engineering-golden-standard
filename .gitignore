@@ -13,6 +13,9 @@ build/
 .idea/
 .DS_Store
 out/
+/output/
+/tmp/
+/workspace/
 results/
 secrets/
 *.key
