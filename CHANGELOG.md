@@ -4,6 +4,14 @@ Versions describe the standard, not production maturity. No tag is implied.
 
 ## Unreleased
 
+- Reject malformed string scope sets and evidence role lists; retain adversarial
+  counterexamples showing caller identity, mutable hash and partial-hit limitations.
+- Add a bounded synthetic revision-aware investigation, browser journey and separate-process
+  SQLite stop/cancel/recovery drill. No company data, production executor or model added.
+- Add a 32-case public development self-check, literal-locator comparison, risk mapping,
+  independent resolver assessment and staged first-win evidence record. Independent domain
+  verification, protected holdout, employee use and measured business benefit remain pending.
+
 - Add a monochrome visual field guide, Windows offline first-use instructions, committed
   snapshot ZIP/checksum tooling, and a single offline preflight command. Python/model
   provisioning and Windows execution remain explicit target prerequisites.

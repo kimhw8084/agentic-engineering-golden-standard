@@ -16,9 +16,13 @@ listed in [GOVERNANCE.md](GOVERNANCE.md). These are requirements for consuming a
 not implemented enterprise APIs.
 
 Implemented here: full-scan synthetic lexical retrieval, simulated role filtering,
-in-memory hash/state gates, offline evaluation and no-overwrite retrofit. Absent:
-authentication, source ACLs, persistence/locking, idempotency storage, signed audit,
-model/embedding endpoints, scheduler, UI and operational approvals.
+in-memory hash/state gates, offline evaluation and no-overwrite retrofit. The isolated
+[synthetic investigation pilot](../examples/manufacturing/README.md) adds two pinned Python
+snapshots, bounded AST traversal, a loopback browser journey and local SQLite supervision
+(deduplication, admission, cancellation, stop/recovery and mutable event evidence).
+These are synthetic demonstrations, with author-executed verification only. Absent from
+enterprise runtime: authentication/source ACLs, distributed execution/recovery, protected
+audit, model/embedding endpoints and authenticated independent operational approval.
 
 ## State and safety
 

@@ -1,0 +1,662 @@
+{
+  "split": "public development",
+  "label_status": "AI-author-generated; not independent labels or a protected holdout",
+  "cases": [
+    {
+      "id": "DEV-01",
+      "slice": "revision",
+      "request": {
+        "revision": "r1",
+        "parameter": "sample_count"
+      },
+      "expected": {
+        "status": "partial",
+        "symbols": [
+          "dispatch",
+          "override_sample",
+          "parse_sample",
+          "sample_default",
+          "sample_path",
+          "validate_sample"
+        ],
+        "unknown_kinds": [
+          "dynamic_dispatch"
+        ],
+        "edges": [
+          [
+            "override_sample",
+            "parse_sample"
+          ],
+          [
+            "sample_path",
+            "dispatch"
+          ],
+          [
+            "sample_path",
+            "override_sample"
+          ],
+          [
+            "sample_path",
+            "parse_sample"
+          ],
+          [
+            "sample_path",
+            "sample_default"
+          ],
+          [
+            "sample_path",
+            "validate_sample"
+          ]
+        ],
+        "unknown_targets": [
+          "handlers[mode]"
+        ]
+      },
+      "fault": null
+    },
+    {
+      "id": "DEV-02",
+      "slice": "complete",
+      "request": {
+        "revision": "r1",
+        "parameter": "exposure_ms"
+      },
+      "expected": {
+        "status": "supported",
+        "symbols": [
+          "exposure_default",
+          "exposure_path",
+          "validate_exposure"
+        ],
+        "unknown_kinds": [],
+        "edges": [
+          [
+            "exposure_path",
+            "exposure_default"
+          ],
+          [
+            "exposure_path",
+            "validate_exposure"
+          ]
+        ],
+        "unknown_targets": []
+      },
+      "fault": null
+    },
+    {
+      "id": "DEV-03",
+      "slice": "cycle",
+      "request": {
+        "revision": "r1",
+        "parameter": "cycle_count"
+      },
+      "expected": {
+        "status": "supported",
+        "symbols": [
+          "cycle_a",
+          "cycle_b"
+        ],
+        "unknown_kinds": [],
+        "edges": [
+          [
+            "cycle_a",
+            "cycle_b"
+          ],
+          [
+            "cycle_b",
+            "cycle_a"
+          ]
+        ],
+        "unknown_targets": []
+      },
+      "fault": null
+    },
+    {
+      "id": "DEV-04",
+      "slice": "missing-edge",
+      "request": {
+        "revision": "r1",
+        "parameter": "missing_count"
+      },
+      "expected": {
+        "status": "partial",
+        "symbols": [
+          "missing_path"
+        ],
+        "unknown_kinds": [
+          "missing_source"
+        ],
+        "edges": [],
+        "unknown_targets": [
+          "undocumented_interface"
+        ]
+      },
+      "fault": null
+    },
+    {
+      "id": "DEV-05",
+      "slice": "access",
+      "request": {
+        "revision": "r1",
+        "parameter": "restricted_gain"
+      },
+      "expected": {
+        "status": "denied",
+        "symbols": [],
+        "unknown_kinds": [],
+        "edges": [],
+        "unknown_targets": []
+      },
+      "fault": null
+    },
+    {
+      "id": "DEV-06",
+      "slice": "unknown",
+      "request": {
+        "revision": "r1",
+        "parameter": "sample_count_extra"
+      },
+      "expected": {
+        "status": "abstained",
+        "symbols": [],
+        "unknown_kinds": [],
+        "edges": [],
+        "unknown_targets": []
+      },
+      "fault": null
+    },
+    {
+      "id": "DEV-07",
+      "slice": "unknown",
+      "request": {
+        "revision": "r1",
+        "parameter": "unknown"
+      },
+      "expected": {
+        "status": "abstained",
+        "symbols": [],
+        "unknown_kinds": [],
+        "edges": [],
+        "unknown_targets": []
+      },
+      "fault": null
+    },
+    {
+      "id": "DEV-08",
+      "slice": "unavailable",
+      "request": {
+        "revision": "r1",
+        "parameter": "sample_count"
+      },
+      "expected": {
+        "status": "unavailable",
+        "symbols": [],
+        "unknown_kinds": [],
+        "edges": [],
+        "unknown_targets": []
+      },
+      "fault": "unavailable"
+    },
+    {
+      "id": "DEV-09",
+      "slice": "tampered",
+      "request": {
+        "revision": "r1",
+        "parameter": "sample_count"
+      },
+      "expected": {
+        "status": "integrity_error",
+        "symbols": [],
+        "unknown_kinds": [],
+        "edges": [],
+        "unknown_targets": []
+      },
+      "fault": "tampered"
+    },
+    {
+      "id": "DEV-10",
+      "slice": "revision",
+      "request": {
+        "revision": "r2",
+        "parameter": "sample_count"
+      },
+      "expected": {
+        "status": "partial",
+        "symbols": [
+          "dispatch",
+          "normalize",
+          "override_sample",
+          "parse_sample",
+          "sample_default",
+          "sample_path",
+          "validate_sample"
+        ],
+        "unknown_kinds": [
+          "dynamic_dispatch",
+          "missing_source"
+        ],
+        "edges": [
+          [
+            "override_sample",
+            "parse_sample"
+          ],
+          [
+            "sample_path",
+            "dispatch"
+          ],
+          [
+            "sample_path",
+            "normalize"
+          ],
+          [
+            "sample_path",
+            "override_sample"
+          ],
+          [
+            "sample_path",
+            "parse_sample"
+          ],
+          [
+            "sample_path",
+            "sample_default"
+          ],
+          [
+            "sample_path",
+            "validate_sample"
+          ]
+        ],
+        "unknown_targets": [
+          "external_normalize",
+          "handlers[mode]"
+        ]
+      },
+      "fault": null
+    },
+    {
+      "id": "DEV-11",
+      "slice": "complete",
+      "request": {
+        "revision": "r2",
+        "parameter": "exposure_ms"
+      },
+      "expected": {
+        "status": "supported",
+        "symbols": [
+          "exposure_default",
+          "exposure_path",
+          "validate_exposure"
+        ],
+        "unknown_kinds": [],
+        "edges": [
+          [
+            "exposure_path",
+            "exposure_default"
+          ],
+          [
+            "exposure_path",
+            "validate_exposure"
+          ]
+        ],
+        "unknown_targets": []
+      },
+      "fault": null
+    },
+    {
+      "id": "DEV-12",
+      "slice": "cycle",
+      "request": {
+        "revision": "r2",
+        "parameter": "cycle_count"
+      },
+      "expected": {
+        "status": "supported",
+        "symbols": [
+          "cycle_a",
+          "cycle_b"
+        ],
+        "unknown_kinds": [],
+        "edges": [
+          [
+            "cycle_a",
+            "cycle_b"
+          ],
+          [
+            "cycle_b",
+            "cycle_a"
+          ]
+        ],
+        "unknown_targets": []
+      },
+      "fault": null
+    },
+    {
+      "id": "DEV-13",
+      "slice": "missing-edge",
+      "request": {
+        "revision": "r2",
+        "parameter": "missing_count"
+      },
+      "expected": {
+        "status": "partial",
+        "symbols": [
+          "missing_path"
+        ],
+        "unknown_kinds": [
+          "missing_source"
+        ],
+        "edges": [],
+        "unknown_targets": [
+          "undocumented_interface"
+        ]
+      },
+      "fault": null
+    },
+    {
+      "id": "DEV-14",
+      "slice": "access",
+      "request": {
+        "revision": "r2",
+        "parameter": "restricted_gain"
+      },
+      "expected": {
+        "status": "denied",
+        "symbols": [],
+        "unknown_kinds": [],
+        "edges": [],
+        "unknown_targets": []
+      },
+      "fault": null
+    },
+    {
+      "id": "DEV-15",
+      "slice": "unknown",
+      "request": {
+        "revision": "r2",
+        "parameter": "sample_count_extra"
+      },
+      "expected": {
+        "status": "abstained",
+        "symbols": [],
+        "unknown_kinds": [],
+        "edges": [],
+        "unknown_targets": []
+      },
+      "fault": null
+    },
+    {
+      "id": "DEV-16",
+      "slice": "unknown",
+      "request": {
+        "revision": "r2",
+        "parameter": "unknown"
+      },
+      "expected": {
+        "status": "abstained",
+        "symbols": [],
+        "unknown_kinds": [],
+        "edges": [],
+        "unknown_targets": []
+      },
+      "fault": null
+    },
+    {
+      "id": "DEV-17",
+      "slice": "unavailable",
+      "request": {
+        "revision": "r2",
+        "parameter": "sample_count"
+      },
+      "expected": {
+        "status": "unavailable",
+        "symbols": [],
+        "unknown_kinds": [],
+        "edges": [],
+        "unknown_targets": []
+      },
+      "fault": "unavailable"
+    },
+    {
+      "id": "DEV-18",
+      "slice": "tampered",
+      "request": {
+        "revision": "r2",
+        "parameter": "sample_count"
+      },
+      "expected": {
+        "status": "integrity_error",
+        "symbols": [],
+        "unknown_kinds": [],
+        "edges": [],
+        "unknown_targets": []
+      },
+      "fault": "tampered"
+    },
+    {
+      "id": "DEV-19",
+      "slice": "wrong-revision",
+      "request": {
+        "revision": "main",
+        "parameter": "sample_count"
+      },
+      "expected": {
+        "status": "unavailable",
+        "symbols": [],
+        "unknown_kinds": [],
+        "edges": [],
+        "unknown_targets": []
+      },
+      "fault": null
+    },
+    {
+      "id": "DEV-20",
+      "slice": "wrong-revision",
+      "request": {
+        "revision": "latest",
+        "parameter": "sample_count"
+      },
+      "expected": {
+        "status": "unavailable",
+        "symbols": [],
+        "unknown_kinds": [],
+        "edges": [],
+        "unknown_targets": []
+      },
+      "fault": null
+    },
+    {
+      "id": "DEV-21",
+      "slice": "wrong-revision",
+      "request": {
+        "revision": "r3",
+        "parameter": "sample_count"
+      },
+      "expected": {
+        "status": "unavailable",
+        "symbols": [],
+        "unknown_kinds": [],
+        "edges": [],
+        "unknown_targets": []
+      },
+      "fault": null
+    },
+    {
+      "id": "DEV-22",
+      "slice": "wrong-revision",
+      "request": {
+        "revision": "../r1.py",
+        "parameter": "sample_count"
+      },
+      "expected": {
+        "status": "unavailable",
+        "symbols": [],
+        "unknown_kinds": [],
+        "edges": [],
+        "unknown_targets": []
+      },
+      "fault": null
+    },
+    {
+      "id": "DEV-23",
+      "slice": "wrong-revision",
+      "request": {
+        "revision": "r1.py",
+        "parameter": "sample_count"
+      },
+      "expected": {
+        "status": "unavailable",
+        "symbols": [],
+        "unknown_kinds": [],
+        "edges": [],
+        "unknown_targets": []
+      },
+      "fault": null
+    },
+    {
+      "id": "DEV-24",
+      "slice": "wrong-revision",
+      "request": {
+        "revision": "R1",
+        "parameter": "sample_count"
+      },
+      "expected": {
+        "status": "unavailable",
+        "symbols": [],
+        "unknown_kinds": [],
+        "edges": [],
+        "unknown_targets": []
+      },
+      "fault": null
+    },
+    {
+      "id": "DEV-25",
+      "slice": "wrong-revision",
+      "request": {
+        "revision": "",
+        "parameter": "sample_count"
+      },
+      "expected": {
+        "status": "unavailable",
+        "symbols": [],
+        "unknown_kinds": [],
+        "edges": [],
+        "unknown_targets": []
+      },
+      "fault": null
+    },
+    {
+      "id": "DEV-26",
+      "slice": "adversarial-input",
+      "request": {
+        "revision": "r1",
+        "parameter": "sample_count",
+        "roles": [
+          "synthetic:restricted"
+        ]
+      },
+      "expected": {
+        "status": "input_contract",
+        "symbols": [],
+        "unknown_kinds": [],
+        "edges": [],
+        "unknown_targets": []
+      },
+      "fault": null
+    },
+    {
+      "id": "DEV-27",
+      "slice": "adversarial-input",
+      "request": {
+        "revision": "r1",
+        "parameter": "sample_count; export secrets"
+      },
+      "expected": {
+        "status": "input_contract",
+        "symbols": [],
+        "unknown_kinds": [],
+        "edges": [],
+        "unknown_targets": []
+      },
+      "fault": null
+    },
+    {
+      "id": "DEV-28",
+      "slice": "adversarial-input",
+      "request": {
+        "revision": "r1",
+        "parameter": true
+      },
+      "expected": {
+        "status": "input_contract",
+        "symbols": [],
+        "unknown_kinds": [],
+        "edges": [],
+        "unknown_targets": []
+      },
+      "fault": null
+    },
+    {
+      "id": "DEV-29",
+      "slice": "adversarial-input",
+      "request": {
+        "revision": "r1",
+        "parameter": ""
+      },
+      "expected": {
+        "status": "input_contract",
+        "symbols": [],
+        "unknown_kinds": [],
+        "edges": [],
+        "unknown_targets": []
+      },
+      "fault": null
+    },
+    {
+      "id": "DEV-30",
+      "slice": "adversarial-input",
+      "request": {
+        "revision": 1,
+        "parameter": "sample_count"
+      },
+      "expected": {
+        "status": "input_contract",
+        "symbols": [],
+        "unknown_kinds": [],
+        "edges": [],
+        "unknown_targets": []
+      },
+      "fault": null
+    },
+    {
+      "id": "DEV-31",
+      "slice": "adversarial-input",
+      "request": {
+        "parameter": "sample_count"
+      },
+      "expected": {
+        "status": "input_contract",
+        "symbols": [],
+        "unknown_kinds": [],
+        "edges": [],
+        "unknown_targets": []
+      },
+      "fault": null
+    },
+    {
+      "id": "DEV-32",
+      "slice": "adversarial-input",
+      "request": {
+        "revision": "r1",
+        "parameter": "sample_count",
+        "model": "send-to-external"
+      },
+      "expected": {
+        "status": "input_contract",
+        "symbols": [],
+        "unknown_kinds": [],
+        "edges": [],
+        "unknown_targets": []
+      },
+      "fault": null
+    }
+  ]
+}

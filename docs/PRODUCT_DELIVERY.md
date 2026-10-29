@@ -1,6 +1,7 @@
 # Employee workflows and staged adoption
 
-This template contains no employee application. Consuming products must deliver a minimum
+This template includes a synthetic loopback study UI, not an authenticated employee
+application (see `examples/manufacturing/README.md`). Consuming products must deliver a minimum
 lovable end-to-end workflow before claiming adoption. Ordinary employees need no terminal,
 Git, prompt editing or API credentials.
 

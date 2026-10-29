@@ -21,7 +21,7 @@ jobs:
           python-version: '3.12'
       - name: Verify template and OpenCode skill conventions
         run: python scripts/verify_standard.py
-      - name: Run synthetic no-network unit tests
+      - name: Run synthetic offline unit and loopback integration tests
         run: python -m unittest discover -s tests -v
       - name: Evaluate access-filtered synthetic retrieval
         run: python -m scripts.evaluate_fixture --min-hit 0.85

@@ -59,4 +59,7 @@ after results and before handoff. A cancel/handoff race is decided by one atomic
 Already handed-off work returns already_terminal plus external reconciliation reference;
 never promise rollback of a remote effect. Late results cannot restore canceled state.
 Stop at the first of deadline, step/call/cost budget, cancellation or policy denial.
-No durable store, signatures, cancellation executor or remote-effect path exists here.
+These full enterprise contracts are not executable here. The separate synthetic pilot
+(`examples/manufacturing/README.md`) exercises a narrow local SQLite admission/cancel/stop
+subset; it does not implement this envelope, employee identity, signatures, distributed
+cancellation, remote effects or independent operational approval. `ChangeRun` is unchanged.

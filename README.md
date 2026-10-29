@@ -15,6 +15,11 @@ IT/support capacity, and maintain [current interview evidence](academy/README.md
 
 ## In 10 minutes
 
+For the working revision-aware synthetic investigation, see the
+[pilot and operator drill](examples/manufacturing/README.md) and
+[Engineering Readiness and First-Win Report](docs/FIRST_WIN_READINESS.md).
+This local browser fixture has no company authentication/data or proven business savings.
+
 For a one-way transfer to a Windows work PC, start with [OFFLINE_START.md](OFFLINE_START.md)
 and the [visual field guide](docs/field-guide/field-guide.pdf). The guide is a generated
 explanation of canonical rules; preflight is offline and needs approved Python 3.11+.
