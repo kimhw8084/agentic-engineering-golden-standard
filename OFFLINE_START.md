@@ -1,7 +1,9 @@
 # First use on a Windows work PC
 
-Open `docs/field-guide/field-guide.pdf` first. It explains the system, repository map,
-work loop, safety boundaries, ROI and interview practice. It needs only a PDF reader.
+For in-depth study open `docs/handbook/agentic-engineering-handbook.html` in a browser or
+the adjacent PDF in a reader. It explains the science, design, human-only and AI workflows,
+worked cases, comparisons and exercises. Both are self-contained for offline reading.
+Use `docs/field-guide/field-guide.pdf` when you want the shorter 12-page orientation.
 
 ## Before the one-way transfer
 
