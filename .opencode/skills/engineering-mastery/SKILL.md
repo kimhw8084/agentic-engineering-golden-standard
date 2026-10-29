@@ -16,7 +16,7 @@ AI-assisted implementation does **not** demonstrate independent human mastery.
 2. Teach first principles with equations, counterexamples, exact source locations and one realistic failure scenario. Read relevant `academy/` lecture.
 3. Require developer to predict behavior and defend at least two design alternatives.
 4. Define a 20–60 minute **unaided** coding or diagnosis lab with deterministic local tests and no AI-generated solution.
-5. Grade `0 unaware / 1 explain / 2 aided implementation / 3 independent implementation + defense / 4 production evidence + adversarial defense`.
+5. Grade using the canonical 0–4 rubric in `academy/README.md`; record unassessed ability honestly.
 6. Log honest evidence and remaining gaps using `templates/MASTERY_RECORD.md`.
 7. Write five interview questions, evaluate answers against code/traces and identify targeted reinforcement.
 

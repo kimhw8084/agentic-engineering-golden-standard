@@ -24,3 +24,7 @@ jobs:
         run: python -m scripts.evaluate_fixture --min-hit 0.85
       - name: Execute synthetic draft safety demo
         run: python -m scripts.change_demo
+      - name: Evaluate public domain seed (not a protected holdout)
+        run: python -m scripts.evaluate_fixture --cases examples/fixtures/domain_cases.json --repeats 20 --min-hit 1.0
+      - name: Execute offline tool-policy trace examples
+        run: python -m scripts.trace_demo

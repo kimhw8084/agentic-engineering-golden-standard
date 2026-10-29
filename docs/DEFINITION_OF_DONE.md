@@ -15,4 +15,11 @@ Each ticket must answer these questions and show exact evidence:
 11. **Business:** Before/after labor or quality measurements, method and uncertainty; never multiply fictional savings by employee headcount.
 12. **Next step:** One prioritized small change with exit criterion.
 
+For significant features attach a business hypothesis/measurement card and an independent
+coding/debugging exercise plus architecture defense. Use the academy's canonical rubric;
+schedule recall at days 2/7/30 and record actual results. Sanitized career evidence requires
+explicit source-owner/confidentiality approval before external use. AI-assisted delivery
+does not demonstrate human mastery. Employee products also satisfy the no-terminal journey
+and staged gates in `docs/PRODUCT_DELIVERY.md`; skill changes follow `docs/SKILL_PUBLICATION.md`.
+
 Status: `NOT STARTED`, `IN PROGRESS`, `BLOCKED`, `VERIFIED IN FIXTURES`, `VERIFIED IN STAGING`, `VERIFIED IN PRODUCTION`. Avoid ambiguous 'done'.

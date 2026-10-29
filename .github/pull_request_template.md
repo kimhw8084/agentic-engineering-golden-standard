@@ -18,3 +18,7 @@
 - Independent exercise performed:
 - What I can now explain without AI:
 - Measured business result or next measurement plan:
+- Recall follow-ups (days 2/7/30), results pending/completed:
+- Career evidence classification/approval before external use:
+- Employee journey/adoption stage (if applicable):
+- Independent reviewer, exact reviewed commit, unresolved findings (not author/agent assertion):
